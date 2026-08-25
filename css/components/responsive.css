@@ -1,0 +1,52 @@
+@import '../tokens.css';
+
+/* ===== BREAKPOINTS (for min-width queries) ===== */
+/* Hide on small screens, show on medium+ */
+@media (min-width: 768px) {
+  .anc-d-none-md { display: none !important; }
+  .anc-d-block-md { display: block !important; }
+  .anc-d-flex-md { display: flex !important; }
+  .anc-d-inline-md { display: inline !important; }
+}
+@media (min-width: 992px) {
+  .anc-d-none-lg { display: none !important; }
+  .anc-d-block-lg { display: block !important; }
+  .anc-d-flex-lg { display: flex !important; }
+}
+@media (min-width: 1200px) {
+  .anc-d-none-xl { display: none !important; }
+  .anc-d-block-xl { display: block !important; }
+  .anc-d-flex-xl { display: flex !important; }
+}
+
+/* ===== SHOW ON MOBILE ONLY (hide on md+) ===== */
+@media (max-width: 767.98px) {
+  .anc-d-none-sm { display: none !important; }
+}
+@media (min-width: 768px) {
+  .anc-d-none-sm { display: block !important; } /* Override for larger */
+}
+
+/* ===== POSITION UTILITIES ===== */
+.anc-position-relative { position: relative !important; }
+.anc-position-absolute { position: absolute !important; }
+.anc-position-fixed { position: fixed !important; }
+.anc-position-sticky { position: sticky !important; }
+
+/* ===== BORDER UTILITIES ===== */
+.anc-border { border: var(--anc-border-width) solid var(--anc-border-light) !important; }
+.anc-border-top { border-top: var(--anc-border-width) solid var(--anc-border-light) !important; }
+.anc-border-bottom { border-bottom: var(--anc-border-width) solid var(--anc-border-light) !important; }
+.anc-border-left { border-left: var(--anc-border-width) solid var(--anc-border-light) !important; }
+.anc-border-right { border-right: var(--anc-border-width) solid var(--anc-border-light) !important; }
+.anc-border-0 { border: 0 !important; }
+
+/* ===== OVERFLOW ===== */
+.anc-overflow-hidden { overflow: hidden !important; }
+.anc-overflow-auto { overflow: auto !important; }
+.anc-overflow-scroll { overflow: scroll !important; }
+
+/* ===== CURSOR ===== */
+.anc-cursor-pointer { cursor: pointer !important; }
+.anc-cursor-default { cursor: default !important; }
+.anc-cursor-not-allowed { cursor: not-allowed !important; }

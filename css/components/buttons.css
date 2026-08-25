@@ -1,0 +1,111 @@
+@import '../tokens.css';
+
+/* ----- BASE BUTTON ----- */
+.anc-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--anc-space-2);
+  font-weight: var(--anc-font-weight-medium);
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  padding: var(--anc-btn-py) var(--anc-btn-px);
+  font-size: var(--anc-btn-font-size);
+  border-radius: var(--anc-btn-radius); /* default: --anc-border-radius-md */
+  border: var(--anc-border-width) solid transparent;
+  background-color: var(--anc-btn-bg);
+  color: var(--anc-btn-color);
+  transition: all var(--anc-transition);
+  line-height: 1.5;
+  min-height: 44px; /* Accessibility: touch target */
+  white-space: nowrap;
+
+  &:hover {
+    background-color: var(--anc-btn-hover-bg, var(--anc-color-primary-hover));
+    border-color: var(--anc-btn-hover-border, var(--anc-color-primary-hover));
+  }
+  &:focus-visible {
+    outline: 2px solid var(--anc-btn-bg);
+    outline-offset: 2px;
+  }
+  &:active {
+    transform: scale(0.96);
+  }
+  &:disabled,
+  &.anc-btn--disabled {
+    opacity: 0.6;
+    pointer-events: none;
+    cursor: default;
+    transform: none;
+  }
+}
+
+/* ----- SHAPE MODIFIERS (NEW) ----- */
+/* 1. Pill / Round (fully rounded ends) */
+.anc-btn--pill {
+  --anc-btn-radius: 9999px;
+}
+
+/* 2. Rectangle (sharp corners) */
+.anc-btn--rectangle {
+  --anc-btn-radius: 0;
+}
+
+/* 3. Circle (perfect 1:1 ratio) */
+.anc-btn--circle {
+  --anc-btn-radius: 50%;
+  padding: 0;
+  width: calc(var(--anc-btn-py) * 2 + var(--anc-btn-font-size) * 1.8);
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  flex-shrink: 0;
+  font-size: calc(var(--anc-btn-font-size) * 1.2);
+}
+
+/* ----- COLOR VARIANTS (Keep as before) ----- */
+.anc-btn--secondary {
+  --anc-btn-bg: var(--anc-color-secondary);
+  --anc-btn-hover-bg: var(--anc-color-secondary-hover);
+}
+.anc-btn--success {
+  --anc-btn-bg: var(--anc-color-success);
+  --anc-btn-hover-bg: color-mix(in srgb, var(--anc-color-success) 80%, black);
+}
+.anc-btn--danger {
+  --anc-btn-bg: var(--anc-color-danger);
+  --anc-btn-hover-bg: color-mix(in srgb, var(--anc-color-danger) 80%, black);
+}
+
+/* ----- OUTLINE VARIANTS ----- */
+.anc-btn--outline {
+  --anc-btn-bg: transparent;
+  --anc-btn-color: var(--anc-color-primary);
+  --anc-btn-border: var(--anc-color-primary);
+  --anc-btn-hover-bg: var(--anc-color-primary);
+  --anc-btn-hover-color: var(--anc-color-white);
+}
+.anc-btn--outline.anc-btn--secondary {
+  --anc-btn-color: var(--anc-color-secondary);
+  --anc-btn-border: var(--anc-color-secondary);
+  --anc-btn-hover-bg: var(--anc-color-secondary);
+  --anc-btn-hover-color: var(--anc-color-white);
+}
+
+/* ----- SIZES ----- */
+.anc-btn--sm {
+  --anc-btn-py: calc(var(--anc-space-1) * 0.75);
+  --anc-btn-px: var(--anc-space-3);
+  --anc-btn-font-size: var(--anc-font-size-sm);
+}
+.anc-btn--lg {
+  --anc-btn-py: var(--anc-space-3);
+  --anc-btn-px: var(--anc-space-5);
+  --anc-btn-font-size: var(--anc-font-size-lg);
+}
+.anc-btn--block {
+  display: flex;
+  width: 100%;
+}

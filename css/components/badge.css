@@ -1,0 +1,56 @@
+@import '../tokens.css';
+
+/* ----- BADGE (Pill) ----- */
+.anc-badge {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.7rem;
+  font-weight: var(--anc-font-weight-bold);
+  line-height: 1.4;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 9999px;
+  background: var(--anc-color-gray-300);
+  color: var(--anc-text-primary);
+  transition: background 0.2s, color 0.2s;
+  font-family: var(--anc-font-family);
+}
+
+/* Color Variants */
+.anc-badge--primary { background: var(--anc-color-primary); color: white; }
+.anc-badge--secondary { background: var(--anc-color-secondary); color: white; }
+.anc-badge--success { background: var(--anc-color-success); color: white; }
+.anc-badge--danger { background: var(--anc-color-danger); color: white; }
+.anc-badge--warning { background: var(--anc-color-warning); color: var(--anc-color-gray-900); }
+
+/* ----- TAG (Label style) ----- */
+.anc-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--anc-space-1);
+  padding: 0.15rem 0.6rem;
+  font-size: 0.7rem;
+  font-weight: var(--anc-font-weight-medium);
+  border-radius: var(--anc-border-radius-sm);
+  background: var(--anc-color-gray-100);
+  color: var(--anc-text-secondary);
+  border: 1px solid var(--anc-border-light);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.anc-tag .anc-tag__remove {
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 0.9rem;
+  line-height: 1;
+  color: inherit;
+  padding: 0 0 0 var(--anc-space-1);
+  opacity: 0.6;
+}
+.anc-tag .anc-tag__remove:hover { opacity: 1; }
+
+.anc-tag--primary { background: color-mix(in srgb, var(--anc-color-primary) 20%, transparent); color: var(--anc-color-primary); border-color: var(--anc-color-primary); }
+.anc-tag--success { background: color-mix(in srgb, var(--anc-color-success) 20%, transparent); color: var(--anc-color-success); border-color: var(--anc-color-success); }
+.anc-tag--danger { background: color-mix(in srgb, var(--anc-color-danger) 20%, transparent); color: var(--anc-color-danger); border-color: var(--anc-color-danger); }

@@ -1,0 +1,68 @@
+@import '../tokens.css';
+
+.anc-tabs__nav {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--anc-space-3) 0;
+  border-bottom: 1px solid var(--anc-border-light);
+  gap: 0;
+}
+
+.anc-tabs__nav-item {
+  margin-bottom: -1px;
+}
+
+.anc-tabs__nav-link {
+  display: block;
+  padding: var(--anc-space-2) var(--anc-space-4);
+  color: var(--anc-text-secondary);
+  text-decoration: none;
+  border: 1px solid transparent;
+  border-radius: var(--anc-border-radius-md) var(--anc-border-radius-md) 0 0;
+  font-weight: var(--anc-font-weight-medium);
+  font-size: var(--anc-font-size-sm);
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+  cursor: pointer;
+  background: transparent;
+}
+.anc-tabs__nav-link:hover {
+  color: var(--anc-text-primary);
+  border-color: var(--anc-border-light) var(--anc-border-light) transparent;
+}
+.anc-tabs__nav-link--active {
+  color: var(--anc-color-primary);
+  background: var(--anc-bg-surface);
+  border-color: var(--anc-border-light) var(--anc-border-light) transparent;
+}
+
+.anc-tabs__panel {
+  display: none;
+  padding: var(--anc-space-3) 0;
+  animation: anc-fade-in 0.25s ease;
+}
+.anc-tabs__panel--active {
+  display: block;
+}
+
+/* ===== PILLS (Alternate style) ===== */
+.anc-pills .anc-tabs__nav {
+  border-bottom: none;
+  gap: var(--anc-space-1);
+}
+.anc-pills .anc-tabs__nav-link {
+  border-radius: var(--anc-border-radius-md);
+  border: 1px solid transparent;
+}
+.anc-pills .anc-tabs__nav-link--active {
+  background: var(--anc-color-primary);
+  color: white;
+  border-color: var(--anc-color-primary);
+}
+.anc-pills .anc-tabs__nav-link:hover:not(.anc-tabs__nav-link--active) {
+  background: var(--anc-color-gray-100);
+}
+[data-theme="dark"] .anc-pills .anc-tabs__nav-link:hover:not(.anc-tabs__nav-link--active) {
+  background: var(--anc-color-gray-700);
+}

@@ -1,0 +1,83 @@
+@import '../tokens.css';
+
+/* ===== BASE CARD ===== */
+.anc-card {
+  background: var(--anc-bg-surface);
+  border: 1px solid var(--anc-border-light);
+  border-radius: var(--anc-border-radius-lg);
+  overflow: hidden;
+  transition: background var(--anc-transition), border var(--anc-transition), box-shadow var(--anc-transition);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== CARD ELEMENTS ===== */
+.anc-card__header {
+  padding: var(--anc-space-4) var(--anc-space-4) 0 var(--anc-space-4);
+}
+.anc-card__header h3,
+.anc-card__header .anc-card-title {
+  font-size: var(--anc-font-size-lg);
+  font-weight: var(--anc-font-weight-bold);
+  margin: 0 0 var(--anc-space-1) 0;
+  color: var(--anc-text-primary);
+  font-family: var(--anc-font-family);
+}
+.anc-card__header .anc-card-subtitle {
+  color: var(--anc-text-secondary);
+  font-size: var(--anc-font-size-sm);
+  margin: 0;
+}
+
+.anc-card__body {
+  padding: var(--anc-space-4);
+  flex: 1;
+  color: var(--anc-text-primary);
+}
+.anc-card__body p {
+  margin: 0 0 var(--anc-space-2) 0;
+  color: var(--anc-text-secondary);
+  line-height: 1.7;
+}
+.anc-card__body p:last-child {
+  margin-bottom: 0;
+}
+
+.anc-card__footer {
+  padding: var(--anc-space-3) var(--anc-space-4);
+  border-top: 1px solid var(--anc-border-light);
+  background: color-mix(in srgb, var(--anc-bg-surface) 90%, black);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--anc-space-2);
+  justify-content: flex-end;
+  margin-top: auto;
+}
+
+/* ===== CARD MODIFIERS ===== */
+/* Elevated (shadow) */
+.anc-card--elevated {
+  border: none;
+  box-shadow: var(--anc-shadow-sm);
+}
+.anc-card--elevated:hover {
+  box-shadow: var(--anc-shadow-lg);
+  transform: translateY(-3px);
+}
+
+/* Image / Media top */
+.anc-card__img-top {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  background: var(--anc-color-gray-300);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--anc-text-secondary);
+  font-size: var(--anc-font-size-sm);
+  flex-shrink: 0;
+}
+[data-theme="dark"] .anc-card__img-top {
+  background: var(--anc-color-gray-700);
+}

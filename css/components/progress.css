@@ -1,0 +1,59 @@
+@import '../tokens.css';
+
+.anc-progress {
+  display: flex;
+  height: 1rem;
+  overflow: hidden;
+  background: var(--anc-color-gray-100);
+  border-radius: var(--anc-border-radius-md);
+  border: 1px solid var(--anc-border-light);
+  transition: background 0.3s, border 0.3s;
+}
+[data-theme="dark"] .anc-progress {
+  background: var(--anc-color-gray-700);
+}
+
+.anc-progress__bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  color: white;
+  text-align: center;
+  white-space: nowrap;
+  background: var(--anc-color-primary);
+  transition: width 0.6s ease;
+  font-size: var(--anc-font-size-sm);
+  font-weight: var(--anc-font-weight-medium);
+}
+
+/* Variants */
+.anc-progress__bar--success { background: var(--anc-color-success); }
+.anc-progress__bar--danger { background: var(--anc-color-danger); }
+.anc-progress__bar--warning { background: var(--anc-color-warning); color: var(--anc-color-gray-900); }
+
+/* Sizes */
+.anc-progress--sm { height: 0.5rem; }
+.anc-progress--lg { height: 1.5rem; }
+.anc-progress--sm .anc-progress__bar { font-size: 0; } /* Hide text on small */
+.anc-progress--lg .anc-progress__bar { font-size: var(--anc-font-size-sm); }
+
+/* Animated (striped) */
+.anc-progress--striped .anc-progress__bar {
+  background-image: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.15) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0.15) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 1rem 1rem;
+  animation: anc-progress-stripes 1s linear infinite;
+}
+@keyframes anc-progress-stripes {
+  0% { background-position: 0 0; }
+  100% { background-position: 1rem 0; }
+}

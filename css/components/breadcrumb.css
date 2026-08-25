@@ -1,0 +1,36 @@
+@import '../tokens.css';
+
+.anc-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  padding: var(--anc-space-2) 0;
+  margin: 0 0 var(--anc-space-3) 0;
+  list-style: none;
+  background: transparent;
+  border-radius: var(--anc-border-radius-md);
+}
+
+.anc-breadcrumb__item {
+  display: flex;
+  align-items: center;
+}
+.anc-breadcrumb__item + .anc-breadcrumb__item::before {
+  content: '/';
+  padding: 0 var(--anc-space-2);
+  color: var(--anc-text-secondary);
+}
+
+.anc-breadcrumb__link {
+  color: var(--anc-color-primary);
+  text-decoration: none;
+  font-size: var(--anc-font-size-sm);
+}
+.anc-breadcrumb__link:hover {
+  text-decoration: underline;
+}
+
+.anc-breadcrumb__item--active .anc-breadcrumb__link {
+  color: var(--anc-text-secondary);
+  pointer-events: none;
+  text-decoration: none;
+}

@@ -1,0 +1,48 @@
+{
+  "name": "ancplacin-css",
+  "version": "1.0.5",
+  "description": "🪐 Ancplacin – A modern, component-based CSS library with built-in theming and vanilla JS.",
+  "main": "./css/ancplacin.css",
+  "style": "./css/ancplacin.css",
+"scripts": {
+  "build": "postcss css/ancplacin.css --output css/ancplacin.min.css"
+},
+  "files": [
+    "css/**/*.css",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "css",
+    "css-library",
+    "component-library",
+    "ui-kit",
+    "dark-mode",
+    "theming",
+    "responsive",
+    "vanilla-js",
+    "ancplacin"
+  ],
+  "author": "Your Name <youremail@example.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://codeberg.org/Alexandaz/AncplacinCSS"
+  },
+  "bugs": {
+    "url": "https://codeberg.org/Alexandaz/AncplacinCSS/issues"
+  },
+  "homepage": "https://codeberg.org/Alexandaz/AncplacinCSS#readme",
+  "browserslist": [
+    "last 2 versions",
+    "not dead",
+    "> 0.2%"
+  ],
+  "devDependencies": {
+    "cssnano": "^8.0.8",
+    "postcss": "^8.5.26",
+    "postcss-cli": "^11.0.1",
+    "postcss-import": "^17.0.0",
+    "postcss-nesting": "^14.0.1"
+  }
+}

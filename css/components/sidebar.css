@@ -1,0 +1,88 @@
+@import '../tokens.css';
+
+.anc-sidebar {
+  position: fixed;
+  top: 64px; /* Below navbar */
+  left: 0;
+  bottom: 0;
+  width: 260px;
+  background: var(--anc-bg-surface);
+  border-right: 1px solid var(--anc-border-light);
+  padding: var(--anc-space-4);
+  overflow-y: auto;
+  transition: transform 0.3s ease, background 0.3s, border 0.3s;
+  z-index: 900;
+  transform: translateX(0);
+}
+
+/* Collapsed state (toggled by JS) */
+.anc-sidebar--collapsed {
+  transform: translateX(-100%);
+}
+
+.anc-sidebar__nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--anc-space-1);
+}
+.anc-sidebar__nav a {
+  display: flex;
+  align-items: center;
+  gap: var(--anc-space-3);
+  padding: var(--anc-space-2) var(--anc-space-3);
+  border-radius: var(--anc-border-radius-md);
+  color: var(--anc-text-secondary);
+  text-decoration: none;
+  font-weight: var(--anc-font-weight-medium);
+  font-size: var(--anc-font-size-sm);
+  transition: all 0.2s;
+}
+.anc-sidebar__nav a:hover,
+.anc-sidebar__nav a.active {
+  background: color-mix(in srgb, var(--anc-color-primary) 15%, transparent);
+  color: var(--anc-color-primary);
+}
+.anc-sidebar__nav a .anc-badge {
+  margin-left: auto;
+}
+
+/* Overlay for mobile when sidebar opens */
+.anc-sidebar-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 899;
+  top: 64px;
+}
+.anc-sidebar-overlay--active {
+  display: block;
+}
+
+/* Main content area shift */
+.anc-main {
+  margin-left: 260px;
+  padding: var(--anc-space-4);
+  min-height: calc(100vh - 64px);
+  transition: margin-left 0.3s ease;
+}
+.anc-main--expanded {
+  margin-left: 0;
+}
+
+/* Responsive: Sidebar hides by default on mobile */
+@media (max-width: 768px) {
+  .anc-sidebar {
+    transform: translateX(-100%);
+    width: 280px;
+  }
+  .anc-sidebar--open {
+    transform: translateX(0);
+  }
+  .anc-main {
+    margin-left: 0 !important;
+  }
+}

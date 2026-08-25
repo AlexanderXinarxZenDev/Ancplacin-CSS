@@ -1,0 +1,27 @@
+# Source files (not needed for npm)
+*.map
+*.html
+node_modules/
+
+# Version control
+.git/
+.gitignore
+.github/
+
+# Documentation (we only ship README.md and LICENSE)
+docs/
+examples/
+demo/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# JS (if you want to keep CSS only)
+js/

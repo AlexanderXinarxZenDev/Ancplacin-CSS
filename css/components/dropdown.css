@@ -1,0 +1,66 @@
+@import '../tokens.css';
+
+.anc-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.anc-dropdown__toggle {
+  cursor: pointer;
+}
+
+.anc-dropdown__menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  min-width: 180px;
+  padding: var(--anc-space-1) 0;
+  margin-top: var(--anc-space-1);
+  background: var(--anc-bg-surface);
+  border: 1px solid var(--anc-border-light);
+  border-radius: var(--anc-border-radius-md);
+  box-shadow: var(--anc-shadow-md);
+  list-style: none;
+  transition: background 0.3s, border 0.3s;
+}
+
+.anc-dropdown--open .anc-dropdown__menu {
+  display: block;
+}
+
+.anc-dropdown__item {
+  display: block;
+  width: 100%;
+  padding: var(--anc-space-2) var(--anc-space-4);
+  color: var(--anc-text-primary);
+  text-decoration: none;
+  background: transparent;
+  border: none;
+  text-align: left;
+  font-size: var(--anc-font-size-sm);
+  font-weight: var(--anc-font-weight-normal);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.anc-dropdown__item:hover {
+  background: color-mix(in srgb, var(--anc-color-primary) 10%, transparent);
+  color: var(--anc-color-primary);
+}
+.anc-dropdown__item:active {
+  background: var(--anc-color-primary);
+  color: white;
+}
+
+.anc-dropdown__divider {
+  height: 0;
+  margin: var(--anc-space-1) 0;
+  border-top: 1px solid var(--anc-border-light);
+}
+
+/* Dropdown right-aligned */
+.anc-dropdown--right .anc-dropdown__menu {
+  left: auto;
+  right: 0;
+}

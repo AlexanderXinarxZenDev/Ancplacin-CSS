@@ -1,0 +1,36 @@
+/*!
+ * Ancplacin CSS v1.0.5
+ * https://codeberg.org/Alexandaz/AncplacinCSS
+ * Licensed under MIT (https://opensource.org/licenses/MIT)
+ * 
+ * A modern, component-based CSS library with built-in theming.
+ */
+
+@import './tokens.css';
+@import './reset.css';
+
+/* Utilities */
+@import './utilities.css';
+@import './components/responsive.css';
+
+/* Layout */
+@import './components/grid.css';
+
+/* Components */
+@import './components/buttons.css';
+@import './components/forms.css';
+@import './components/cards.css';
+@import './components/navbar.css';
+@import './components/sidebar.css';
+@import './components/modal.css';
+@import './components/badge.css';
+@import './components/alert.css';
+@import './components/toast.css';
+@import './components/dropdown.css';
+@import './components/tabs.css';
+@import './components/breadcrumb.css';
+@import './components/pagination.css';
+@import './components/progress.css';
+@import './components/spinner.css';
+@import './components/list-group.css';
+@import './components/table.css';

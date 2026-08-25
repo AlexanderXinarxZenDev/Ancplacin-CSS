@@ -1,0 +1,44 @@
+@import '../tokens.css';
+
+.anc-alert {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--anc-space-3);
+  padding: var(--anc-space-3) var(--anc-space-4);
+  border-radius: var(--anc-border-radius-md);
+  background: var(--anc-bg-surface);
+  border: 1px solid var(--anc-border-light);
+  border-left-width: 4px;
+  color: var(--anc-text-primary);
+  margin-bottom: var(--anc-space-3);
+  transition: background 0.2s, border 0.2s;
+}
+
+.anc-alert__icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 0.1rem; }
+.anc-alert__body { flex: 1; }
+.anc-alert__body strong { display: block; font-weight: var(--anc-font-weight-bold); margin-bottom: 0.1rem; }
+.anc-alert__body p { margin: 0; color: var(--anc-text-secondary); font-size: var(--anc-font-size-sm); }
+
+.anc-alert__close {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: var(--anc-text-secondary);
+  padding: 0 var(--anc-space-1);
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+/* Variants */
+.anc-alert--success { border-left-color: var(--anc-color-success); }
+.anc-alert--success .anc-alert__icon { color: var(--anc-color-success); }
+
+.anc-alert--danger { border-left-color: var(--anc-color-danger); }
+.anc-alert--danger .anc-alert__icon { color: var(--anc-color-danger); }
+
+.anc-alert--warning { border-left-color: var(--anc-color-warning); }
+.anc-alert--warning .anc-alert__icon { color: var(--anc-color-warning); }
+
+.anc-alert--info { border-left-color: var(--anc-color-primary); }
+.anc-alert--info .anc-alert__icon { color: var(--anc-color-primary); }

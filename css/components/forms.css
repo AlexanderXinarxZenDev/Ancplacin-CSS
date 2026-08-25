@@ -1,0 +1,278 @@
+@import '../tokens.css';
+
+/* ========================================
+   FORM GROUPS
+   ======================================== */
+.anc-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--anc-space-1);
+  margin-bottom: var(--anc-space-4);
+}
+.anc-form-group label {
+  font-weight: var(--anc-font-weight-medium);
+  font-size: var(--anc-font-size-sm);
+  color: var(--anc-text-secondary);
+  letter-spacing: 0.02em;
+}
+.anc-form-group--inline {
+  flex-direction: row;
+  align-items: center;
+  gap: var(--anc-space-3);
+}
+
+/* ========================================
+   BASE INPUT STYLES (Native & Class-based)
+   ======================================== */
+.anc-input,
+input:not([type]),
+input[type="text"],
+input[type="url"],
+input[type="date"],
+input[type="week"],
+input[type="color"],
+input[type="file"],
+select,
+textarea {
+  display: block;
+  width: 100%;
+  padding: var(--anc-input-py) var(--anc-input-px);
+  font-size: var(--anc-font-size-base);
+  font-family: var(--anc-font-family);
+  line-height: 1.5;
+  color: var(--anc-input-color);
+  background-color: var(--anc-input-bg);
+  border: var(--anc-border-width) solid var(--anc-input-border);
+  border-radius: var(--anc-input-radius, var(--anc-border-radius-md));
+  transition: border-color var(--anc-transition), box-shadow var(--anc-transition);
+  min-height: 44px; /* Accessibility */
+}
+
+/* Placeholder styling */
+.anc-input::placeholder,
+input::placeholder,
+textarea::placeholder {
+  color: var(--anc-placeholder-color);
+  opacity: 0.7;
+}
+
+/* ========================================
+   INPUT SHAPE MODIFIERS (NEW)
+   ======================================== */
+.anc-input--pill {
+  --anc-input-radius: 9999px;
+}
+.anc-input--rectangle {
+  --anc-input-radius: 0;
+}
+
+/* ========================================
+   FOCUS STATES
+   ======================================== */
+.anc-input:focus,
+input:not([type]):focus,
+input[type="text"]:focus,
+input[type="url"]:focus,
+input[type="date"]:focus,
+input[type="week"]:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--anc-color-primary);
+  box-shadow: var(--anc-input-focus-ring);
+}
+
+/* ========================================
+   DISABLED
+   ======================================== */
+.anc-input:disabled,
+input:disabled,
+select:disabled,
+textarea:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background-color: var(--anc-color-gray-100);
+}
+[data-theme="dark"] .anc-input:disabled,
+[data-theme="dark"] input:disabled,
+[data-theme="dark"] select:disabled,
+[data-theme="dark"] textarea:disabled {
+  background-color: #0f172a;
+}
+
+/* ========================================
+   SELECT DROPDOWN
+   ======================================== */
+select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2364748b' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--anc-space-3) center;
+  padding-right: var(--anc-space-5);
+}
+
+/* ========================================
+   COLOR PICKER
+   ======================================== */
+input[type="color"] {
+  padding: 4px;
+  height: 44px;
+  width: 60px;
+  cursor: pointer;
+}
+
+/* ========================================
+   TEXTAREA
+   ======================================== */
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* ========================================
+   BUTTON INPUTS (type=button, submit, reset)
+   ======================================== */
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--anc-font-weight-medium);
+  font-family: var(--anc-font-family);
+  padding: var(--anc-btn-py) var(--anc-btn-px);
+  font-size: var(--anc-btn-font-size);
+  border-radius: var(--anc-btn-radius);
+  border: var(--anc-border-width) solid transparent;
+  background-color: var(--anc-btn-bg);
+  color: var(--anc-btn-color);
+  transition: all var(--anc-transition);
+  line-height: 1.5;
+  width: auto;
+  min-height: 44px;
+  cursor: pointer;
+}
+input[type="button"]:hover,
+input[type="submit"]:hover {
+  background-color: var(--anc-btn-hover-bg, var(--anc-color-primary-hover));
+}
+input[type="reset"] {
+  --anc-btn-bg: var(--anc-color-secondary);
+  --anc-btn-hover-bg: var(--anc-color-secondary-hover);
+}
+input[type="button"]:active,
+input[type="submit"]:active,
+input[type="reset"]:active {
+  transform: scale(0.96);
+}
+
+/* ========================================
+   CHECKBOX & RADIO
+   ======================================== */
+.anc-check,
+.anc-radio {
+  display: flex;
+  align-items: center;
+  gap: var(--anc-space-2);
+  cursor: pointer;
+}
+.anc-check input[type="checkbox"],
+.anc-radio input[type="radio"] {
+  width: 1.15rem;
+  height: 1.15rem;
+  accent-color: var(--anc-color-primary);
+  cursor: pointer;
+  flex-shrink: 0;
+  padding: 0;
+  min-height: unset;
+  width: 1.15rem;
+}
+
+/* ========================================
+   CUSTOM FILE INPUT (OVERHAULED)
+   ======================================== */
+.anc-file-wrapper {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--anc-space-2);
+  background: var(--anc-input-bg);
+  border: 1px dashed var(--anc-input-border);
+  border-radius: var(--anc-input-radius);
+  padding: var(--anc-space-2) var(--anc-space-3);
+  transition: border-color var(--anc-transition), background var(--anc-transition);
+  min-height: 44px;
+}
+
+.anc-file-wrapper:hover {
+  border-color: var(--anc-color-primary);
+  background: color-mix(in srgb, var(--anc-input-bg) 95%, var(--anc-color-primary));
+}
+
+/* Hide the native input but keep it clickable */
+.anc-file-wrapper input[type="file"] {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+  min-height: unset;
+  padding: 0;
+  border: none;
+  background: transparent;
+  width: 100%;
+  height: 100%;
+}
+
+/* Custom label that acts as the button */
+.anc-file-wrapper label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--anc-space-2);
+  padding: var(--anc-space-1) var(--anc-space-3);
+  background: var(--anc-color-primary);
+  color: var(--anc-color-white);
+  border-radius: var(--anc-border-radius-sm);
+  font-weight: var(--anc-font-weight-medium);
+  font-size: var(--anc-font-size-sm);
+  cursor: pointer;
+  transition: background var(--anc-transition);
+  pointer-events: none; /* Let the file input handle clicks */
+  z-index: 1;
+}
+.anc-file-wrapper label:hover {
+  background: var(--anc-color-primary-hover);
+}
+
+/* File name display */
+.anc-file-name {
+  font-size: var(--anc-font-size-sm);
+  color: var(--anc-text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+  z-index: 1;
+}
+
+/* Update file name dynamically via JS (optional, but we add a demo in HTML) */
+.anc-file-wrapper .anc-file-name {
+  transition: color 0.2s;
+}
+
+/* ========================================
+   VALIDATION STATES
+   ======================================== */
+.anc-input--error,
+input.error {
+  border-color: var(--anc-color-danger) !important;
+}
+.anc-input--error:focus,
+input.error:focus {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.25) !important;
+}
+.anc-form-error {
+  color: var(--anc-color-danger);
+  font-size: var(--anc-font-size-sm);
+  margin-top: var(--anc-space-1);
+}

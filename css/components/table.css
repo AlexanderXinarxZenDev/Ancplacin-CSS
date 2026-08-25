@@ -1,0 +1,68 @@
+@import '../tokens.css';
+
+.anc-table {
+  width: 100%;
+  margin-bottom: var(--anc-space-4);
+  color: var(--anc-text-primary);
+  border-collapse: collapse;
+  font-size: var(--anc-font-size-sm);
+}
+
+.anc-table th,
+.anc-table td {
+  padding: var(--anc-space-2) var(--anc-space-3);
+  vertical-align: top;
+  border-top: 1px solid var(--anc-border-light);
+  text-align: left;
+}
+
+.anc-table thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid var(--anc-border-light);
+  font-weight: var(--anc-font-weight-bold);
+  background: color-mix(in srgb, var(--anc-bg-surface) 95%, black);
+}
+
+/* Striped */
+.anc-table--striped tbody tr:nth-of-type(odd) {
+  background-color: color-mix(in srgb, var(--anc-bg-body) 50%, var(--anc-bg-surface));
+}
+
+/* Hover */
+.anc-table--hover tbody tr:hover {
+  background-color: color-mix(in srgb, var(--anc-color-primary) 8%, transparent);
+}
+
+/* Bordered */
+.anc-table--bordered {
+  border: 1px solid var(--anc-border-light);
+}
+.anc-table--bordered th,
+.anc-table--bordered td {
+  border: 1px solid var(--anc-border-light);
+}
+
+/* Borderless */
+.anc-table--borderless th,
+.anc-table--borderless td,
+.anc-table--borderless thead th {
+  border: none;
+}
+
+/* Small (condensed) */
+.anc-table--sm th,
+.anc-table--sm td {
+  padding: var(--anc-space-1) var(--anc-space-2);
+  font-size: var(--anc-font-size-sm);
+}
+
+/* Responsive wrapper */
+.anc-table-responsive {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.anc-table-responsive .anc-table {
+  margin-bottom: 0;
+}

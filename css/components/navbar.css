@@ -1,0 +1,83 @@
+@import '../tokens.css';
+
+.anc-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--anc-bg-surface);
+  border-bottom: 1px solid var(--anc-border-light);
+  padding: 0 var(--anc-space-4);
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background 0.3s, border 0.3s;
+}
+
+.anc-navbar__brand {
+  display: flex;
+  align-items: center;
+  gap: var(--anc-space-2);
+  font-weight: var(--anc-font-weight-bold);
+  font-size: var(--anc-font-size-lg);
+  color: var(--anc-text-primary);
+  text-decoration: none;
+}
+.anc-navbar__brand span { color: var(--anc-color-primary); }
+
+.anc-navbar__links {
+  display: flex;
+  align-items: center;
+  gap: var(--anc-space-4);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.anc-navbar__links a {
+  color: var(--anc-text-secondary);
+  text-decoration: none;
+  font-weight: var(--anc-font-weight-medium);
+  font-size: var(--anc-font-size-sm);
+  transition: color 0.2s;
+  padding: var(--anc-space-1) 0;
+  border-bottom: 2px solid transparent;
+}
+.anc-navbar__links a:hover {
+  color: var(--anc-text-primary);
+  border-bottom-color: var(--anc-color-primary);
+}
+
+/* Navbar Toggle (Hamburger - hidden on desktop) */
+.anc-navbar__toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--anc-text-primary);
+  padding: var(--anc-space-1);
+}
+
+/* Responsive Mobile */
+@media (max-width: 768px) {
+  .anc-navbar__toggle {
+    display: block;
+  }
+  .anc-navbar__links {
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: var(--anc-bg-surface);
+    border-bottom: 1px solid var(--anc-border-light);
+    padding: var(--anc-space-3) var(--anc-space-4);
+    gap: var(--anc-space-2);
+    box-shadow: var(--anc-shadow-md);
+  }
+  /* When JS adds this class, show the menu */
+  .anc-navbar__links--open {
+    display: flex;
+  }
+}
