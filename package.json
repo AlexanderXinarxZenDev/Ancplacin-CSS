@@ -1,6 +1,6 @@
 {
   "name": "ancplacin-css",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "🪐 Ancplacin – A modern, component-based CSS library with built-in theming and vanilla JS.",
   "main": "./css/ancplacin.css",
   "style": "./css/ancplacin.css",
