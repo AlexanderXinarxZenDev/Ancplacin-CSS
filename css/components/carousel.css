@@ -1,0 +1,74 @@
+/* css/components/carousel.css */
+@import '../tokens.css';
+
+.anc-carousel {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--anc-border-radius-lg);
+  background: var(--anc-bg-surface);
+  border: 1px solid var(--anc-border-light);
+}
+
+.anc-carousel__slides {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.anc-carousel__slide {
+  flex: 0 0 100%;
+  padding: var(--anc-space-4);
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--anc-font-size-lg);
+  color: var(--anc-text-secondary);
+  background: var(--anc-bg-surface);
+}
+
+.anc-carousel__controls {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--anc-space-2);
+  pointer-events: none;
+}
+.anc-carousel__controls button {
+  pointer-events: auto;
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background 0.2s;
+}
+.anc-carousel__controls button:hover {
+  background: rgba(0,0,0,0.8);
+}
+
+.anc-carousel__dots {
+  position: absolute;
+  bottom: var(--anc-space-3);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: var(--anc-space-2);
+}
+.anc-carousel__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.5);
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+.anc-carousel__dot--active {
+  background: white;
+  transform: scale(1.2);
+}

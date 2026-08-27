@@ -1,0 +1,72 @@
+/* css/components/tooltip.css */
+@import '../tokens.css';
+
+.anc-tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.anc-tooltip__trigger {
+  cursor: help;
+}
+
+.anc-tooltip__content {
+  position: absolute;
+  z-index: 2000;
+  padding: var(--anc-space-1) var(--anc-space-3);
+  background: var(--anc-color-gray-900);
+  color: white;
+  border-radius: var(--anc-border-radius-sm);
+  font-size: var(--anc-font-size-sm);
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.anc-tooltip:hover .anc-tooltip__content {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Positions */
+.anc-tooltip--top .anc-tooltip__content {
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) scale(0.9);
+  margin-bottom: var(--anc-space-2);
+}
+.anc-tooltip--top:hover .anc-tooltip__content {
+  transform: translateX(-50%) scale(1);
+}
+
+.anc-tooltip--bottom .anc-tooltip__content {
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) scale(0.9);
+  margin-top: var(--anc-space-2);
+}
+.anc-tooltip--bottom:hover .anc-tooltip__content {
+  transform: translateX(-50%) scale(1);
+}
+
+.anc-tooltip--left .anc-tooltip__content {
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%) scale(0.9);
+  margin-right: var(--anc-space-2);
+}
+.anc-tooltip--left:hover .anc-tooltip__content {
+  transform: translateY(-50%) scale(1);
+}
+
+.anc-tooltip--right .anc-tooltip__content {
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%) scale(0.9);
+  margin-left: var(--anc-space-2);
+}
+.anc-tooltip--right:hover .anc-tooltip__content {
+  transform: translateY(-50%) scale(1);
+}

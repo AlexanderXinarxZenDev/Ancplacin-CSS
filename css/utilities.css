@@ -106,3 +106,48 @@
 .anc-pr-3 { padding-right: var(--anc-space-3) !important; }
 .anc-pr-4 { padding-right: var(--anc-space-4) !important; }
 .anc-pr-5 { padding-right: var(--anc-space-5) !important; }
+
+
+/* ========================================
+   SHADOWS
+   ======================================== */
+.anc-shadow-none { box-shadow: none !important; }
+.anc-shadow-sm { box-shadow: var(--anc-shadow-sm) !important; }
+.anc-shadow-md { box-shadow: var(--anc-shadow-md) !important; }
+.anc-shadow-lg { box-shadow: var(--anc-shadow-lg) !important; }
+
+/* ========================================
+   Z-INDEX
+   ======================================== */
+.anc-z-0 { z-index: 0 !important; }
+.anc-z-10 { z-index: 10 !important; }
+.anc-z-20 { z-index: 20 !important; }
+.anc-z-30 { z-index: 30 !important; }
+.anc-z-40 { z-index: 40 !important; }
+.anc-z-50 { z-index: 50 !important; }
+.anc-z-auto { z-index: auto !important; }
+
+/* ========================================
+   TRANSFORMS
+   ======================================== */
+.anc-rotate-90 { transform: rotate(90deg) !important; }
+.anc-rotate-180 { transform: rotate(180deg) !important; }
+.anc-rotate-270 { transform: rotate(270deg) !important; }
+.anc-scale-75 { transform: scale(0.75) !important; }
+.anc-scale-125 { transform: scale(1.25) !important; }
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+.anc-animate-fade-in {
+  animation: anc-fade-in 0.3s ease !important;
+}
+.anc-animate-slide-up {
+  animation: anc-slide-up 0.3s ease !important;
+}
+.anc-animate-spin {
+  animation: anc-spin 1s linear infinite !important;
+}
+.anc-animate-pulse {
+  animation: anc-skeleton-pulse 1.5s ease-in-out infinite !important;
+}

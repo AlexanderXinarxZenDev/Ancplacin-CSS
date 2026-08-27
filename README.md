@@ -2,6 +2,15 @@
 
 A modern, component-based CSS library with built-in Light/Dark/System theming, a responsive grid, and a tiny vanilla JavaScript module.
 
+## 🆕 New in v1.1.0
+
+- 🪗 **Accordion** – Collapsible content panels
+- 🎠 **Carousel** – Image/slideshow carousel
+- 💬 **Tooltip** – Hover tooltips with 4 positions
+- 👤 **Avatar** – Profile pictures with initials fallback
+- 🦴 **Skeleton** – Loading placeholders
+- ✨ **More Utilities** – Shadows, Z-index, Transforms, Animations
+
 ## Features
 
 - 🎨 **20+ Components** – Buttons, Cards, Modals, Toasts, Navbars, Sidebars, Tabs, Dropdowns, Tables, and more.

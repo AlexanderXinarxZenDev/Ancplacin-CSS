@@ -1,0 +1,51 @@
+/* css/components/avatar.css */
+@import '../tokens.css';
+
+.anc-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--anc-color-primary);
+  color: white;
+  font-weight: var(--anc-font-weight-bold);
+  font-size: var(--anc-font-size-lg);
+  text-transform: uppercase;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.anc-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Sizes */
+.anc-avatar--sm { width: 32px; height: 32px; font-size: var(--anc-font-size-sm); }
+.anc-avatar--lg { width: 64px; height: 64px; font-size: var(--anc-font-size-lg); }
+.anc-avatar--xl { width: 96px; height: 96px; font-size: 2rem; }
+
+/* Shapes */
+.anc-avatar--square { border-radius: var(--anc-border-radius-md); }
+.anc-avatar--rounded { border-radius: var(--anc-border-radius-lg); }
+
+/* Colors */
+.anc-avatar--secondary { background: var(--anc-color-secondary); }
+.anc-avatar--success { background: var(--anc-color-success); }
+.anc-avatar--danger { background: var(--anc-color-danger); }
+.anc-avatar--warning { background: var(--anc-color-warning); color: var(--anc-color-gray-900); }
+
+/* Group */
+.anc-avatar-group {
+  display: flex;
+}
+.anc-avatar-group .anc-avatar {
+  margin-right: -12px;
+  border: 2px solid var(--anc-bg-surface);
+}
+.anc-avatar-group .anc-avatar:last-child {
+  margin-right: 0;
+}

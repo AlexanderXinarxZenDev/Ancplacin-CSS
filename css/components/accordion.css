@@ -1,0 +1,58 @@
+/* css/components/accordion.css */
+@import '../tokens.css';
+
+.anc-accordion {
+  border: 1px solid var(--anc-border-light);
+  border-radius: var(--anc-border-radius-md);
+  overflow: hidden;
+}
+
+.anc-accordion__item {
+  border-bottom: 1px solid var(--anc-border-light);
+}
+.anc-accordion__item:last-child {
+  border-bottom: none;
+}
+
+.anc-accordion__header {
+  width: 100%;
+  padding: var(--anc-space-3) var(--anc-space-4);
+  background: var(--anc-bg-surface);
+  border: none;
+  text-align: left;
+  font-weight: var(--anc-font-weight-medium);
+  font-size: var(--anc-font-size-base);
+  color: var(--anc-text-primary);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.2s, color 0.2s;
+}
+.anc-accordion__header:hover {
+  background: color-mix(in srgb, var(--anc-color-primary) 8%, transparent);
+}
+.anc-accordion__header::after {
+  content: '▾';
+  transition: transform 0.3s ease;
+  font-size: 0.8rem;
+  color: var(--anc-text-secondary);
+}
+
+.anc-accordion__item--open .anc-accordion__header::after {
+  transform: rotate(180deg);
+}
+
+.anc-accordion__body {
+  padding: 0 var(--anc-space-4);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  background: var(--anc-bg-surface);
+  color: var(--anc-text-secondary);
+  line-height: 1.7;
+}
+.anc-accordion__item--open .anc-accordion__body {
+  max-height: 500px;
+  padding: var(--anc-space-3) var(--anc-space-4);
+}
