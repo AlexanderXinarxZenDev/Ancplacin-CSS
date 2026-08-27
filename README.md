@@ -1,8 +1,8 @@
-# 🪐 Ancplacin 1.0v
+# 🪐 Ancplacin 1.2v
 
 A modern, component-based CSS library with built-in Light/Dark/System theming, a responsive grid, and a tiny vanilla JavaScript module.
 
-## 🆕 New in v1.1.0
+## 🆕 New in v1.2.0
 
 - 🪗 **Accordion** – Collapsible content panels
 - 🎠 **Carousel** – Image/slideshow carousel
