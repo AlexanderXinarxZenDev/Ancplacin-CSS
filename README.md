@@ -26,7 +26,7 @@ A modern, component-based CSS library with built-in Light/Dark/System theming, a
 ### CDN (via unpkg)
 ```html
 <!-- CSS -->
-<link rel="stylesheet" href="https://unpkg.com/ancplacin@1.0.0/css/ancplacin.css" />
+<link rel="stylesheet" href="https://unpkg.com/ancplacin@1.2.0/css/ancplacin.css" />
 
 ```
 
@@ -135,5 +135,5 @@ To test the npm package locally before publishing, you can replace your local im
 <link rel="stylesheet" href="./css/ancplacin.css" />
 
 <!-- CDN (after publishing) -->
-<link rel="stylesheet" href="https://unpkg.com/ancplacin@1.0.0/css/ancplacin.css" />
+<link rel="stylesheet" href="https://unpkg.com/ancplacin@1.2.0/css/ancplacin.css" />
 ```
