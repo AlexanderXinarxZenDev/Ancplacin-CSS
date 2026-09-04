@@ -1,0 +1,151 @@
+/* ========================================
+   Scrollspy - Pure CSS (Using :target)
+   Highlights nav items when sections are targeted
+   ======================================== */
+
+/* ===== SCROLLSPY CONTAINER ===== */
+.anc-scrollspy {
+  display: flex;
+  gap: var(--anc-space-4);
+  position: relative;
+}
+
+/* ===== NAVIGATION ===== */
+.anc-scrollspy__nav {
+  position: sticky;
+  top: 80px;
+  align-self: flex-start;
+  min-width: 180px;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+  padding: var(--anc-space-2);
+  background: var(--anc-bg-surface);
+  border: 1px solid var(--anc-border-light);
+  border-radius: var(--anc-border-radius-md);
+  flex-shrink: 0;
+}
+
+.anc-scrollspy__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.anc-scrollspy__list li {
+  margin-bottom: var(--anc-space-1);
+}
+
+.anc-scrollspy__link {
+  display: block;
+  padding: var(--anc-space-2) var(--anc-space-3);
+  color: var(--anc-text-secondary);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  border-radius: var(--anc-border-radius-sm);
+  transition: all 0.2s;
+  font-size: var(--anc-font-size-sm);
+  font-weight: var(--anc-font-weight-medium);
+}
+
+.anc-scrollspy__link:hover {
+  color: var(--anc-text-primary);
+  background: color-mix(in srgb, var(--anc-color-primary) 8%, transparent);
+}
+
+/* ===== ACTIVE STATE (When section is :target) ===== */
+.anc-scrollspy__link--active {
+  color: var(--anc-color-primary);
+  border-left-color: var(--anc-color-primary);
+  background: color-mix(in srgb, var(--anc-color-primary) 10%, transparent);
+  font-weight: var(--anc-font-weight-bold);
+}
+
+/* ===== SECTIONS ===== */
+.anc-scrollspy__content {
+  flex: 1;
+  min-width: 0;
+}
+
+.anc-scrollspy__section {
+  scroll-margin-top: 80px;
+  padding: var(--anc-space-4);
+  margin-bottom: var(--anc-space-4);
+  background: var(--anc-bg-surface);
+  border: 1px solid var(--anc-border-light);
+  border-radius: var(--anc-border-radius-lg);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Highlight section when targeted */
+.anc-scrollspy__section:target {
+  border-color: var(--anc-color-primary);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+.anc-scrollspy__section h3 {
+  margin-top: 0;
+  color: var(--anc-text-primary);
+}
+
+.anc-scrollspy__section p {
+  color: var(--anc-text-secondary);
+  line-height: 1.7;
+}
+
+/* ===== NESTED NAVIGATION ===== */
+.anc-scrollspy__list .anc-scrollspy__list {
+  padding-left: var(--anc-space-4);
+  margin-top: var(--anc-space-1);
+}
+
+.anc-scrollspy__list .anc-scrollspy__list .anc-scrollspy__link {
+  font-size: 0.8rem;
+  padding: var(--anc-space-1) var(--anc-space-3);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .anc-scrollspy {
+    flex-direction: column;
+  }
+
+  .anc-scrollspy__nav {
+    position: relative;
+    top: 0;
+    max-height: 200px;
+    overflow-y: auto;
+    width: 100%;
+  }
+
+  .anc-scrollspy__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--anc-space-1);
+  }
+
+  .anc-scrollspy__list li {
+    margin-bottom: 0;
+  }
+
+  .anc-scrollspy__link {
+    border-left: none;
+    border-bottom: 2px solid transparent;
+    padding: var(--anc-space-1) var(--anc-space-2);
+    font-size: 0.8rem;
+  }
+
+  .anc-scrollspy__link--active {
+    border-left: none;
+    border-bottom-color: var(--anc-color-primary);
+  }
+
+  .anc-scrollspy__list .anc-scrollspy__list {
+    padding-left: 0;
+    width: 100%;
+  }
+
+  .anc-scrollspy__section {
+    scroll-margin-top: 20px;
+    padding: var(--anc-space-3);
+  }
+}

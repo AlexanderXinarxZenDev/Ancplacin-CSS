@@ -5,6 +5,8 @@
  * 
  * A modern, component-based CSS library with built-in theming.
  */
+
+/* v1.1.0 Beta - Release */
 @import './tokens.css';
 @import './reset.css';
 
@@ -34,9 +36,15 @@
 @import './components/list-group.css';
 @import './components/table.css';
 
-/* ✨ NEW ✨ */
+/* v1.2.2 */
 @import './components/accordion.css';
 @import './components/carousel.css';
 @import './components/tooltip.css';
 @import './components/avatar.css';
 @import './components/skeleton.css';
+
+/* v1.2.9 */
+@import './components/offcanvas.css';
+@import './components/popover.css';
+@import './components/scrollspy.css';
+@import './components/animations.css/';

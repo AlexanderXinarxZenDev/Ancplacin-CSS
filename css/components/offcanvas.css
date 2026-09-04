@@ -1,0 +1,167 @@
+/* ========================================
+   Offcanvas - Slide-in panels (Pure CSS)
+   Using :target – NO checkboxes required
+   ======================================== */
+
+/* ===== BASE OFF CANVAS ===== */
+.anc-offcanvas {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: 1050;
+  background: var(--anc-bg-surface);
+  padding: var(--anc-space-4);
+  overflow-y: auto;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+  box-shadow: var(--anc-shadow-lg);
+  width: 320px;
+  max-width: 90vw;
+  pointer-events: none;
+}
+
+/* ===== POSITIONS ===== */
+
+/* Left */
+.anc-offcanvas--left {
+  left: 0;
+  transform: translateX(-100%);
+  border-right: 1px solid var(--anc-border-light);
+}
+
+/* Right */
+.anc-offcanvas--right {
+  right: 0;
+  transform: translateX(100%);
+  border-left: 1px solid var(--anc-border-light);
+}
+
+/* Bottom (slide up) */
+.anc-offcanvas--bottom {
+  top: auto;
+  bottom: 0;
+  width: 100%;
+  max-width: 100%;
+  transform: translateY(100%);
+  border-top: 1px solid var(--anc-border-light);
+  border-right: none;
+  max-height: 80vh;
+  border-radius: var(--anc-border-radius-lg) var(--anc-border-radius-lg) 0 0;
+}
+
+/* ===== OPEN STATES (Using :target) ===== */
+
+/* Left open */
+.anc-offcanvas--left:target {
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+/* Right open */
+.anc-offcanvas--right:target {
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+/* Bottom open */
+.anc-offcanvas--bottom:target {
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* ===== BACKDROPS (Using :target) ===== */
+.anc-offcanvas__backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1040;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  animation: anc-fade-in 0.25s ease;
+  cursor: pointer;
+}
+
+/* Show backdrop when offcanvas is targeted */
+.anc-offcanvas--left:target ~ .anc-offcanvas__backdrop--left,
+.anc-offcanvas--right:target ~ .anc-offcanvas__backdrop--right,
+.anc-offcanvas--bottom:target ~ .anc-offcanvas__backdrop--bottom {
+  display: block;
+}
+
+/* ===== HEADER ===== */
+.anc-offcanvas__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: var(--anc-space-3);
+  border-bottom: 1px solid var(--anc-border-light);
+  margin-bottom: var(--anc-space-3);
+}
+.anc-offcanvas__header h3 {
+  margin: 0;
+  font-size: var(--anc-font-size-lg);
+  font-weight: var(--anc-font-weight-bold);
+  color: var(--anc-text-primary);
+}
+
+/* ===== CLOSE BUTTON ===== */
+.anc-offcanvas__close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--anc-text-secondary);
+  padding: 0 var(--anc-space-1);
+  transition: color 0.2s;
+  font-family: var(--anc-font-family);
+  text-decoration: none;
+}
+.anc-offcanvas__close:hover {
+  color: var(--anc-text-primary);
+}
+
+/* ===== BODY ===== */
+.anc-offcanvas__body {
+  color: var(--anc-text-secondary);
+  line-height: 1.7;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 576px) {
+  .anc-offcanvas {
+    width: 100%;
+    max-width: 100%;
+  }
+  .anc-offcanvas--left,
+  .anc-offcanvas--right {
+    border: none;
+  }
+  .anc-offcanvas--bottom {
+    border-radius: var(--anc-border-radius-lg) var(--anc-border-radius-lg) 0 0;
+  }
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes anc-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ========================================
+   FIX: Close button uses # to remove hash
+   ======================================== */
+.anc-offcanvas__close--target {
+  display: inline-block;
+  color: var(--anc-text-secondary);
+  font-size: 1.5rem;
+  line-height: 1;
+  text-decoration: none;
+  padding: 0 var(--anc-space-1);
+}
+.anc-offcanvas__close--target:hover {
+  color: var(--anc-text-primary);
+}

@@ -1,0 +1,162 @@
+/* ========================================
+   Popovers - Hover/click boxes with arrows
+   ======================================== */
+
+/* ===== BASE POPOVER ===== */
+.anc-popover {
+  position: relative;
+  display: inline-block;
+}
+
+/* ===== POPOVER TRIGGER ===== */
+.anc-popover__trigger {
+  cursor: pointer;
+  display: inline-block;
+}
+
+/* ===== POPOVER CONTENT ===== */
+.anc-popover__content {
+  position: absolute;
+  z-index: 2000;
+  min-width: 200px;
+  max-width: 280px;
+  padding: var(--anc-space-3);
+  background: var(--anc-bg-surface);
+  border: 1px solid var(--anc-border-light);
+  border-radius: var(--anc-border-radius-md);
+  box-shadow: var(--anc-shadow-lg);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  color: var(--anc-text-primary);
+  font-size: var(--anc-font-size-sm);
+  line-height: 1.6;
+}
+
+/* ===== SHOW ON HOVER ===== */
+.anc-popover:hover .anc-popover__content {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ===== POSITIONS ===== */
+
+/* ----- TOP ----- */
+.anc-popover--top .anc-popover__content {
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-8px);
+}
+.anc-popover--top:hover .anc-popover__content {
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ----- BOTTOM ----- */
+.anc-popover--bottom .anc-popover__content {
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(8px);
+}
+.anc-popover--bottom:hover .anc-popover__content {
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ----- LEFT ----- */
+.anc-popover--left .anc-popover__content {
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%) translateX(-8px);
+}
+.anc-popover--left:hover .anc-popover__content {
+  transform: translateY(-50%) translateX(0);
+}
+
+/* ----- RIGHT ----- */
+.anc-popover--right .anc-popover__content {
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%) translateX(8px);
+}
+.anc-popover--right:hover .anc-popover__content {
+  transform: translateY(-50%) translateX(0);
+}
+
+/* ===== ARROW ===== */
+.anc-popover__arrow {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: var(--anc-bg-surface);
+  border: 1px solid var(--anc-border-light);
+  transform: rotate(45deg);
+}
+
+/* Top arrow (pointing down) */
+.anc-popover--top .anc-popover__arrow {
+  bottom: -6px;
+  left: 50%;
+  margin-left: -5px;
+  border-top: none;
+  border-left: none;
+}
+
+/* Bottom arrow (pointing up) */
+.anc-popover--bottom .anc-popover__arrow {
+  top: -6px;
+  left: 50%;
+  margin-left: -5px;
+  border-bottom: none;
+  border-right: none;
+}
+
+/* Left arrow (pointing right) */
+.anc-popover--left .anc-popover__arrow {
+  right: -6px;
+  top: 50%;
+  margin-top: -5px;
+  border-left: none;
+  border-bottom: none;
+}
+
+/* Right arrow (pointing left) */
+.anc-popover--right .anc-popover__arrow {
+  left: -6px;
+  top: 50%;
+  margin-top: -5px;
+  border-right: none;
+  border-top: none;
+}
+
+/* ========================================
+   CHECKBOX HACK (Click to toggle)
+   For popovers that open on click instead of hover
+   ======================================== */
+
+.anc-popover__toggle {
+  display: none;
+}
+
+/* Show when checkbox is checked */
+.anc-popover__toggle:checked ~ .anc-popover__content {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Click variant – overrides hover */
+.anc-popover--click .anc-popover__content {
+  opacity: 0;
+  pointer-events: none;
+}
+.anc-popover--click:hover .anc-popover__content {
+  opacity: 0; /* Disable hover on click variant */
+  pointer-events: none;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 576px) {
+  .anc-popover__content {
+    min-width: 160px;
+    max-width: 220px;
+    padding: var(--anc-space-2);
+  }
+}
